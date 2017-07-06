@@ -44,11 +44,11 @@ Now can we still say that to write the nodes in order we go to the node to the l
 Let's try again.  Instead of the node to the left, we can have the branch to the left *in order* (in other words left child of 1, center (1), and right child of 1 (4)).  Followed by the root node of 6, followed by the branch *in order* to the right. So the left branch in order would give us no left child, followed by the root node of 1, followed by the right child of 4.
 
  Seems like we might be onto something.
- 
- ```text 
+
+ ```text
  inOrder = inOrder(Right branch), root node, inOrder(left branch)
  ```
- 
+
  Let's move back to our original data structure.
 
 ```text
@@ -68,7 +68,7 @@ Let's try to translate this into code.
 ```javascript
 function inOrder(currentNode){
   if(currentNode.left){
-    inOrder(currentNode.right)
+    inOrder(currentNode.left)
   }
   console.log(currentNode.data)
   if(currentNode.right){
